@@ -46,6 +46,7 @@ body {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-sizing: border-box;
 }
 
 .header-section {
@@ -77,6 +78,7 @@ header .logo-second-word {
 }
 
 .nav-item {
+  position: relative;
   font-weight: 500;
   color: #2e2f42;
   letter-spacing: 0.02em;
@@ -84,9 +86,28 @@ header .logo-second-word {
   padding: 24px 0;
 }
 
-.nav-items a:hover,
-.nav-items a:focus {
+.nav-item:hover,
+.nav-item:focus {
   color: #404bbf;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background: #404bbf;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover::after,
+.nav-item:focus::after {
+  opacity: 1;
 }
 
 .address-section {
@@ -112,6 +133,14 @@ header .logo-second-word {
 
 .hero-section {
   background-color: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   padding: 188px 0;
 }
 
@@ -170,6 +199,15 @@ header .logo-second-word {
   gap: 24px;
 }
 
+.feature-icon-wrapper {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  padding: 24px 100px;
+}
+
 .features-list li {
   max-width: calc((1138px - 72px) / 4);
   width: 100%;
@@ -181,7 +219,7 @@ header .logo-second-word {
   color: #2e2f42;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  padding-bottom: 8px;
+  padding: 8px 0;
 }
 
 .ourteam-section {
@@ -232,6 +270,27 @@ header .logo-second-word {
 
 .card-text {
   text-align: center;
+}
+
+.social-icon-list {
+  display: flex;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.social-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  fill: #f4f4fd;
 }
 
 .ourportfolio-section {
