@@ -129,10 +129,12 @@ header .logo-second-word {
 }
 
 .address-list a {
+  display: inline-block;
   font-style: normal;
   color: #434455;
   letter-spacing: 0.02em;
   padding: 24px 0;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list a:hover,
